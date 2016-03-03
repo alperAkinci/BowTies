@@ -17,35 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        //Test
-        
-        //Save Test BowTie
-        let bowtie = NSEntityDescription.insertNewObjectForEntityForName("BowTie", inManagedObjectContext: managedObjectContext) as! BowTie
-        
-        bowtie.name = "My bow tie"
-        bowtie.lastWorn = NSDate()
-        
-        do {
-            try managedObjectContext.save()
-        }catch let error as NSError{
-            print("Saving error: \(error.localizedDescription)")
-        }
-        
-        //Retrieve Test BowTie
-        do{
-            let request = NSFetchRequest(entityName: "BowTie")
-            let ties = try managedObjectContext.executeFetchRequest(request) as! [BowTie]
-            
-            let sample : BowTie = ties[0]
-            
-            print ("Name : \(sample.name), Worn : \(sample.lastWorn)" )
-            
-        }catch let error as NSError {
-            print("Fetching error: \(error.localizedDescription)")
-        }
-        
+        //Propagation of managed context to ViewController
+        //Passing of managed context from class to class via a property
+        let viewController = window?.rootViewController as! ViewController
+        viewController.managedContext = managedObjectContext
         
         return true
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
