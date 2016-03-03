@@ -16,6 +16,8 @@
 		4EFF67291C887D8800F564D7 /* Bow_TiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF67281C887D8800F564D7 /* Bow_TiesTests.swift */; };
 		4EFF67341C887D8800F564D7 /* Bow_TiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF67331C887D8800F564D7 /* Bow_TiesUITests.swift */; };
 		4EFF67421C8881D400F564D7 /* SampleData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF67411C8881D400F564D7 /* SampleData.plist */; };
+		4EFF67451C8897BE00F564D7 /* BowTie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF67431C8897BD00F564D7 /* BowTie+CoreDataProperties.swift */; };
+		4EFF67461C8897BE00F564D7 /* BowTie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF67441C8897BD00F564D7 /* BowTie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		4EFF67331C887D8800F564D7 /* Bow_TiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bow_TiesUITests.swift; sourceTree = "<group>"; };
 		4EFF67351C887D8800F564D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EFF67411C8881D400F564D7 /* SampleData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SampleData.plist; sourceTree = "<group>"; };
+		4EFF67431C8897BD00F564D7 /* BowTie+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BowTie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4EFF67441C8897BD00F564D7 /* BowTie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BowTie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 		4EFF67041C887D8800F564D7 = {
 			isa = PBXGroup;
 			children = (
+				4EFF67431C8897BD00F564D7 /* BowTie+CoreDataProperties.swift */,
+				4EFF67441C8897BD00F564D7 /* BowTie.swift */,
 				4EFF670F1C887D8800F564D7 /* Bow Ties */,
 				4EFF67271C887D8800F564D7 /* Bow TiesTests */,
 				4EFF67321C887D8800F564D7 /* Bow TiesUITests */,
@@ -267,8 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EFF67191C887D8800F564D7 /* Bow_Ties.xcdatamodeld in Sources */,
+				4EFF67461C8897BE00F564D7 /* BowTie.swift in Sources */,
 				4EFF67131C887D8800F564D7 /* ViewController.swift in Sources */,
 				4EFF67111C887D8800F564D7 /* AppDelegate.swift in Sources */,
+				4EFF67451C8897BE00F564D7 /* BowTie+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
