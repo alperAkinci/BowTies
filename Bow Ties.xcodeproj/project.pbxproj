@@ -15,6 +15,7 @@
 		4EFF671E1C887D8800F564D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF671C1C887D8800F564D7 /* LaunchScreen.storyboard */; };
 		4EFF67291C887D8800F564D7 /* Bow_TiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF67281C887D8800F564D7 /* Bow_TiesTests.swift */; };
 		4EFF67341C887D8800F564D7 /* Bow_TiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF67331C887D8800F564D7 /* Bow_TiesUITests.swift */; };
+		4EFF67421C8881D400F564D7 /* SampleData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF67411C8881D400F564D7 /* SampleData.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		4EFF672F1C887D8800F564D7 /* Bow TiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bow TiesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFF67331C887D8800F564D7 /* Bow_TiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bow_TiesUITests.swift; sourceTree = "<group>"; };
 		4EFF67351C887D8800F564D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EFF67411C8881D400F564D7 /* SampleData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SampleData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				4EFF67121C887D8800F564D7 /* ViewController.swift */,
 				4EFF67141C887D8800F564D7 /* Main.storyboard */,
 				4EFF671A1C887D8800F564D7 /* Assets.xcassets */,
+				4EFF67411C8881D400F564D7 /* SampleData.plist */,
 				4EFF671C1C887D8800F564D7 /* LaunchScreen.storyboard */,
 				4EFF671F1C887D8800F564D7 /* Info.plist */,
 				4EFF67171C887D8800F564D7 /* Bow_Ties.xcdatamodeld */,
@@ -237,6 +240,7 @@
 			files = (
 				4EFF671E1C887D8800F564D7 /* LaunchScreen.storyboard in Resources */,
 				4EFF671B1C887D8800F564D7 /* Assets.xcassets in Resources */,
+				4EFF67421C8881D400F564D7 /* SampleData.plist in Resources */,
 				4EFF67161C887D8800F564D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
