@@ -66,6 +66,9 @@ class ViewController: UIViewController {
     
     @IBAction func segmentedControl(control: UISegmentedControl) {
         
+        
+        
+        
     }
     
     @IBAction func wear(sender: AnyObject) {
@@ -90,6 +93,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func rate(sender: AnyObject) {
+        
+        // Alert Implementation
+        let alert = UIAlertController(title: "New Rating", message: "Rate this bow tie", preferredStyle:.Alert)
+        
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        
+        let saveAction = UIAlertAction(title: "Save", style: .Default) { (action : UIAlertAction) -> Void in
+            //Save Button gets the rating in TextField and updates it via updataRating function
+            let textField = alert.textFields![0] as UITextField
+            self.updateRating(textField.text!)
+        }
+        
+        alert.addTextFieldWithConfigurationHandler { (textField :UITextField) -> Void in
+            textField.keyboardType = .NumberPad
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(saveAction)
+        
+        presentViewController(alert, animated: true , completion: nil)
         
     }
 
@@ -186,6 +211,23 @@ class ViewController: UIViewController {
         */
     
     
+    }
+    
+    func updateRating(numericString : String ){
+        
+        //Convert the text from the alert view's textfield into a double and use it to update the current bow ties rating property.
+        currentBowTie.rating = NSString(string: numericString).doubleValue
+        
+        
+        //Commit the changes by saving managedContext and refresh the UI
+        do{
+            try managedContext.save()
+            populate(currentBowTie)
+        }catch let error as NSError{
+            print("Could not save \(error),\(error.userInfo)")
+            
+        }
+
     }
     
     
