@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     /*The caller which is this class , responsible for setting the managed context , ViewController can use it without needing to know where it came from. */
     var managedContext: NSManagedObjectContext!
     
+    //Keep track of the currently selected BowTie , so we can referance it from anywhere in our class
+    var currentBowTie : BowTie!
+    
 //MARK: View Controller Lifecycle
     
     override func viewDidLoad() {
@@ -48,7 +51,8 @@ class ViewController: UIViewController {
             let results = try managedContext.executeFetchRequest(request) as! [BowTie]
             
             //4 - Populate the user ınterface with the first bow tie in the results array .
-            populate(results.first!)
+            currentBowTie  = results.first
+            populate(currentBowTie)
         }catch let error as NSError{
             print("Could not fetch \(error) , \(error.userInfo)")
             
@@ -66,6 +70,23 @@ class ViewController: UIViewController {
     
     @IBAction func wear(sender: AnyObject) {
         
+        //Get the currently selected BowTie and increment its timeWorns attribute
+        let times = currentBowTie.timesWorn?.integerValue
+        //Wrap integer into NSNumber
+        currentBowTie.timesWorn  = NSNumber(integer: times!+1)
+        
+        //Change the lastWorn date to Today
+        currentBowTie.lastWorn = NSDate()
+        
+        //Save the managedContext to commit these changes to disk
+        do{
+            try managedContext.save()
+        }catch let error as NSError{
+            print("Could not save \(error), \(error.userInfo)")
+        }
+        
+        //Populate UI to visualize these changes
+        populate(currentBowTie)
     }
     
     @IBAction func rate(sender: AnyObject) {
