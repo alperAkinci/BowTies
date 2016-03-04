@@ -226,7 +226,16 @@ class ViewController: UIViewController {
         }catch let error as NSError{
             print("Could not save \(error),\(error.userInfo)")
             
+            //if there is an error and it happened because the new rating was either too large or too small , then you present the alert view again via rate method.
+            
+            /*NSValidationNumberTooLargeError is an error code that maps to 1610 */
+            if error.domain == NSCocoaErrorDomain && (error.code == NSValidationNumberTooLargeError || error.code == NSValidationNumberTooSmallError){
+                rate(currentBowTie)
+            }
+            
         }
+        
+        
 
     }
     
