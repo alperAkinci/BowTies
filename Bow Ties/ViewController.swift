@@ -66,6 +66,26 @@ class ViewController: UIViewController {
     
     @IBAction func segmentedControl(control: UISegmentedControl) {
         
+        // Each title of segment in the segmented control corresponds to a particular tie's search key attribute.
+        let selectedValue = control.titleForSegmentAtIndex(control.selectedSegmentIndex)
+        
+        //Fetch the apprpriate bowtie using the NSPredicate
+        let request = NSFetchRequest(entityName: "BowTie")
+        request.predicate = NSPredicate(format: "searchKey == %@", selectedValue!)
+        
+        
+        do{
+            //results returns a bow tie specified by search key (there is only one per serach key)
+            let results = try managedContext.executeFetchRequest(request) as! [BowTie]
+            
+            currentBowTie = results.first
+            //Populate UI
+            populate(currentBowTie)
+        
+        }catch let error as NSError {
+            print("Could not fetch \(error) , \(error.userInfo)")
+        }
+        
         
         
         
